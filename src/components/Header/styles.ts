@@ -32,5 +32,13 @@ export const Content = styled.div`
         color: #00FF7F	;
     }
 
-    
+    @media (max-width: 460px) {
+       justify-content: center;
+       flex-direction: column;
+       gap: 1.3rem;
+       button {
+        width: 100%;
+       }
+  }
+  
 `
