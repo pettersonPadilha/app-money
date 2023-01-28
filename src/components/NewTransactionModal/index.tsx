@@ -22,15 +22,20 @@ export function NewTransactionModal({isOpen, onRequestClose}:NewTransactionsModa
 
 
     //Inserindo dados no form
-    function handleCreateNewTransaction(event:FormEvent) {
+     async function handleCreateNewTransaction(event:FormEvent) {
         event.preventDefault();
 
-        createTransaction({
+        await createTransaction({
             title,
             amount,
             category,
             type
         })
+        setTitle('')
+        setAmount(0)
+        setCategory('')
+        setType('deposit')
+        onRequestClose();
     }
 
     return(
