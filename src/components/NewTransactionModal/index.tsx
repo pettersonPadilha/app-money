@@ -3,8 +3,9 @@ import { Container,TransactionTypeContainer,RadioBox } from './styles';
 import IncomeImg from '../../assets/income.svg'
 import OutcomeImg from '../../assets/outcome.svg'
 import CloseImg from '../../assets/close.svg';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState,useContext } from 'react';
 import { api } from '../../services/api';
+import { TransactionContext } from '../../TransactionContext';
 
 interface NewTransactionsModalProps {
     isOpen: boolean;
@@ -13,8 +14,9 @@ interface NewTransactionsModalProps {
 }
 
 export function NewTransactionModal({isOpen, onRequestClose}:NewTransactionsModalProps) {
+    const {createTransaction} = useContext(TransactionContext)
     const [title, setTitle] = useState('')
-    const [value,setValue] = useState(0)
+    const [amount,setAmount] = useState(0)
     const [category,setCategory] = useState('')
     const [type, setType] = useState('deposit');
 
@@ -23,8 +25,12 @@ export function NewTransactionModal({isOpen, onRequestClose}:NewTransactionsModa
     function handleCreateNewTransaction(event:FormEvent) {
         event.preventDefault();
 
-        const data= { title,value,category,type}
-        api.post('/transactions', data)
+        createTransaction({
+            title,
+            amount,
+            category,
+            type
+        })
     }
 
     return(
@@ -34,7 +40,7 @@ export function NewTransactionModal({isOpen, onRequestClose}:NewTransactionsModa
         <Container onSubmit={handleCreateNewTransaction}>
             <h2>Cadastrar Transação</h2>
             <input placeholder='Titulo' value={title} onChange={event => setTitle(event.target.value)} />
-            <input type="number"placeholder='Valor'  value={value} onChange={event => setValue(Number(event.target.value))}/>
+            <input type="number"placeholder='Valor'  value={amount} onChange={event => setAmount(Number(event.target.value))}/>
 
             <TransactionTypeContainer>
                 <RadioBox type="button" onClick={() => {setType('deposit');}} isActive={type === 'deposit'} activeColor="green" > 
