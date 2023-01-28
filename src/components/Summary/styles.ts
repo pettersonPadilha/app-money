@@ -28,7 +28,11 @@ export const Container = styled.div`
             background: #33cc95;
             color: white
         }
+        .deposit {
+            color: #DC143C;
+            }
     }
+   
     @media (max-width: 528px) {
         grid-template-columns: repeat(1,1fr);
   }
