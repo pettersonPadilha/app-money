@@ -20,14 +20,17 @@ npm install ou yarn
 
 
 
-## Autores
-
-- [@PetterPadilha](https://github.com/pettersonPadilha)
-
 
 ## Funcionalidades
 
 - Responsive em todos os dispositivo 
 - Modo tela cheia
 - Multiplataforma
+
+
+## Autores
+
+- [@PetterPadilha](https://github.com/pettersonPadilha)
+
+
 
