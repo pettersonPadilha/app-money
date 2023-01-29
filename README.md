@@ -3,6 +3,10 @@
 
 Um projeto que calcula entrada e saida dos seus gasto
 
+
+
+
+
 ## Instalação
 
 Instale my-project com npm
@@ -20,6 +24,13 @@ npm install ou yarn
 
 
 
+## Screenshots
+
+![image](https://user-images.githubusercontent.com/72679046/215303448-6e8ce458-9190-4059-a403-a71cd04ecf38.png)
+
+
+
+
 
 ## Funcionalidades
 
@@ -31,6 +42,4 @@ npm install ou yarn
 ## Autores
 
 - [@PetterPadilha](https://github.com/pettersonPadilha)
-
-
 
